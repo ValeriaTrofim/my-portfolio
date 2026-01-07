@@ -5,6 +5,7 @@ import {
   Box,
   Button,
   Container,
+  Drawer,
   IconButton,
   Link,
   Menu,
@@ -16,16 +17,16 @@ import {
 import { blueGrey } from "@mui/material/colors";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import ArrowOutwardOutlinedIcon from "@mui/icons-material/ArrowOutwardOutlined";
+import MenuIcon from "@mui/icons-material/Menu";
+import { useState } from "react";
+import DrawerList from "./DrawerList";
+import MobileMenu from "./MobileMenu";
 
 const pages = ["Home", "About me", "Services", "My work", "Contact me"];
 
 const Navbar = () => {
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
-    null
-  );
-  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
-    null
-  );
+  const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
+  const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
 
   const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElUser(event.currentTarget);
@@ -33,10 +34,6 @@ const Navbar = () => {
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
   };
 
   return (
@@ -50,7 +47,7 @@ const Navbar = () => {
             href="#app-bar-with-responsive-menu"
             sx={{
               mr: 5,
-              display: { xs: "none", md: "flex" },
+              display: "flex",
               fontFamily: "inherit",
               fontWeight: 700,
               letterSpacing: ".2rem",
@@ -90,6 +87,8 @@ const Navbar = () => {
               ))}
             </Menu>
           </Box>
+          <MobileMenu />
+
           <Box
             sx={{
               flexGrow: 1,
@@ -100,7 +99,7 @@ const Navbar = () => {
             {pages.map((page) => (
               <Link
                 href="#"
-                underline="none"
+                underline="hover"
                 key={page}
                 onClick={handleCloseNavMenu}
                 sx={{
@@ -122,11 +121,14 @@ const Navbar = () => {
             <Tooltip title="Open settings">
               <Button
                 onClick={handleOpenUserMenu}
+                component={Link}
+                href="#contact"
                 sx={{
                   p: 1,
                   fontFamily: "inherit",
                   color: blueGrey[900],
                   borderColor: blueGrey[500],
+                  display: { xs: "none", md: "inline-flex" },
                 }}
                 variant="outlined"
                 endIcon={<ArrowOutwardOutlinedIcon />}
@@ -134,22 +136,6 @@ const Navbar = () => {
                 Contact
               </Button>
             </Tooltip>
-            <Menu
-              sx={{ mt: "45px" }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            ></Menu>
           </Box>
         </Toolbar>
       </Container>
