@@ -1,14 +1,41 @@
-import { List, ListItem, ListItemButton, ListItemText } from "@mui/material";
+import {
+  Link,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+} from "@mui/material";
 
-const pages = ["Home", "About me", "Services", "My work", "Contact me"];
+export const lists = [
+  {
+    page: "Home",
+    link: "top",
+  },
+  {
+    page: "About me",
+    link: "about",
+  },
+  {
+    page: "Services",
+    link: "services",
+  },
+  {
+    page: "My work",
+    link: "work",
+  },
+  {
+    page: "Contact me",
+    link: "contact",
+  },
+];
 
 const DrawerList = () => {
   return (
     <List>
-      {pages.map((page) => (
-        <ListItem key={page} disablePadding>
-          <ListItemButton>
-            <ListItemText primary={page} />
+      {lists.map((list) => (
+        <ListItem key={list.page} disablePadding>
+          <ListItemButton component={Link} href={`#${list.link}`}>
+            <ListItemText primary={list.page} />
           </ListItemButton>
         </ListItem>
       ))}

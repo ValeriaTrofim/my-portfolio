@@ -1,15 +1,10 @@
-"use client";
-import * as React from "react";
 import {
   AppBar,
   Box,
   Button,
   Container,
-  Drawer,
   IconButton,
   Link,
-  Menu,
-  MenuItem,
   Toolbar,
   Tooltip,
   Typography,
@@ -17,29 +12,14 @@ import {
 import { blueGrey } from "@mui/material/colors";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import ArrowOutwardOutlinedIcon from "@mui/icons-material/ArrowOutwardOutlined";
-import MenuIcon from "@mui/icons-material/Menu";
-import { useState } from "react";
-import DrawerList from "./DrawerList";
 import MobileMenu from "./MobileMenu";
-
-const pages = ["Home", "About me", "Services", "My work", "Contact me"];
+import { lists } from "./DrawerList";
 
 const Navbar = () => {
-  const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
-  const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
-
-  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
   return (
     <AppBar position="static" sx={{ bgcolor: "background.paper" }}>
       <Container maxWidth="xl">
-        <Toolbar disableGutters>
+        <Toolbar disableGutters sx={{ justifyContent: "space-between" }}>
           <Typography
             variant="h6"
             noWrap
@@ -57,38 +37,6 @@ const Navbar = () => {
           >
             Valeria
           </Typography>
-
-          <Box
-            sx={{
-              flexGrow: 1,
-              display: { xs: "flex", md: "none" },
-            }}
-          >
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{ display: { xs: "block", md: "none" } }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography sx={{ textAlign: "center" }}>{page}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-          <MobileMenu />
-
           <Box
             sx={{
               flexGrow: 1,
@@ -96,12 +44,11 @@ const Navbar = () => {
               justifyContent: "center",
             }}
           >
-            {pages.map((page) => (
+            {lists.map((list) => (
               <Link
-                href="#"
+                href={`# ${list.link}`}
                 underline="hover"
-                key={page}
-                onClick={handleCloseNavMenu}
+                key={list.page}
                 sx={{
                   my: 2,
                   mx: 2.8,
@@ -110,7 +57,7 @@ const Navbar = () => {
                   fontFamily: "outfit",
                 }}
               >
-                {page}
+                {list.page}
               </Link>
             ))}
           </Box>
@@ -118,9 +65,9 @@ const Navbar = () => {
             <IconButton sx={{ mx: 2 }}>
               <DarkModeOutlinedIcon sx={{ color: blueGrey[500] }} />
             </IconButton>
+            <MobileMenu />
             <Tooltip title="Open settings">
               <Button
-                onClick={handleOpenUserMenu}
                 component={Link}
                 href="#contact"
                 sx={{

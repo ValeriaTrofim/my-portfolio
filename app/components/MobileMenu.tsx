@@ -1,3 +1,4 @@
+"use client";
 import { Box, Drawer, IconButton } from "@mui/material";
 import { useState } from "react";
 import DrawerList from "./DrawerList";
