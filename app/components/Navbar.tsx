@@ -66,23 +66,21 @@ const Navbar = () => {
               <DarkModeOutlinedIcon sx={{ color: blueGrey[500] }} />
             </IconButton>
             <MobileMenu />
-            <Tooltip title="Open settings">
-              <Button
-                component={Link}
-                href="#contact"
-                sx={{
-                  p: 1,
-                  fontFamily: "inherit",
-                  color: blueGrey[900],
-                  borderColor: blueGrey[500],
-                  display: { xs: "none", md: "inline-flex" },
-                }}
-                variant="outlined"
-                endIcon={<ArrowOutwardOutlinedIcon />}
-              >
-                Contact
-              </Button>
-            </Tooltip>
+            <Button
+              component={Link}
+              href="#contact"
+              sx={{
+                p: 1,
+                fontFamily: "inherit",
+                color: blueGrey[900],
+                borderColor: blueGrey[500],
+                display: { xs: "none", md: "inline-flex" },
+              }}
+              variant="outlined"
+              endIcon={<ArrowOutwardOutlinedIcon />}
+            >
+              Contact
+            </Button>
           </Box>
         </Toolbar>
       </Container>

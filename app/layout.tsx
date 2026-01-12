@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Outfit, Ovo } from "next/font/google";
+import { ThemeProvider } from "@mui/material/styles";
 import "./globals.css";
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
+import theme from "./src/theme";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -25,7 +28,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${outfit.className} ${ovo.className} antialiased`}>
-        {children}
+        <AppRouterCacheProvider>
+          <ThemeProvider theme={theme}>{children}</ThemeProvider>
+        </AppRouterCacheProvider>
       </body>
     </html>
   );
