@@ -6,7 +6,6 @@ import {
   IconButton,
   Link,
   Toolbar,
-  Tooltip,
   Typography,
 } from "@mui/material";
 import { blueGrey } from "@mui/material/colors";
@@ -51,7 +50,7 @@ const Navbar = () => {
                 key={list.page}
                 sx={{
                   my: 2,
-                  mx: 2.8,
+                  mx: 2.7,
                   color: blueGrey[900],
                   display: "block",
                   fontFamily: "outfit",
