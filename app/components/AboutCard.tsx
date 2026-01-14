@@ -10,7 +10,7 @@ import SchoolIcon from "@mui/icons-material/School";
 import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
 import { blueGrey } from "@mui/material/colors";
 
-const cards = [
+export const cards = [
   {
     id: 1,
     Icon: <CodeOffIcon />,
@@ -34,7 +34,7 @@ const cards = [
 
 const AboutCard = () => {
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: { md: "flex", sm: "none" }, flexWrap: "wrap" }}>
       {cards.map((card) => (
         <Card sx={{ maxWidth: 275, mr: 3, mb: 3, minWidth: 200 }} key={card.id}>
           <CardActionArea>

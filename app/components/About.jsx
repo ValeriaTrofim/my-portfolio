@@ -1,7 +1,9 @@
 import { Container, Typography, Box, Avatar, IconButton } from "@mui/material";
 import AboutCard from "./AboutCard";
+import MobileAboutCard from "./MobileAboutCard";
+import AboutAccordion from "./AboutAccordion";
 
-const toolIcons = [
+export const toolIcons = [
   "/assets/Git.svg",
   "/assets/Github-Dark.svg",
   "/assets/MaterialUI-Dark.svg",
@@ -18,8 +20,8 @@ const About = () => {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          mt: 27,
-          mb: 8,
+          mt: { md: 27, xs: 10 },
+          mb: { md: 8, xs: 3 },
         }}
       >
         <Typography
@@ -42,7 +44,7 @@ const About = () => {
       </Box>
       <Box
         sx={{
-          display: "flex",
+          display: { sm: "flex", xs: "none" },
           flexDirection: { sm: "row", xs: "column" },
           alignItems: "center",
         }}
@@ -52,7 +54,7 @@ const About = () => {
             width: { sm: 280, xs: 180 },
             height: { sm: 340, xs: 240 },
             borderRadius: 3,
-            mb: 2,
+            mb: { md: 2, sm: 6 },
           }}
           alt="Valeria Trofim"
           src="/assets/avatar.jpg"
@@ -71,7 +73,7 @@ const About = () => {
             sx={{
               fontFamily: "inherit",
               typography: { sm: "body1", md: "h6", xs: "h6" },
-              pb: 5,
+              pb: { sm: 2, md: 6 },
             }}
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum fugit
@@ -80,6 +82,7 @@ const About = () => {
             deserunt animi magni.
           </Typography>
           <AboutCard />
+          <AboutAccordion />
           <Typography>Tools I use :</Typography>
           <Box>
             {toolIcons.map((tool) => (
@@ -94,6 +97,7 @@ const About = () => {
           </Box>
         </Box>
       </Box>
+      <MobileAboutCard />
     </Container>
   );
 };
