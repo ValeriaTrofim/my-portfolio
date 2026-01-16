@@ -1,12 +1,25 @@
+"use client";
 import {
   Box,
+  ButtonProps,
   Card,
-  CardActionArea,
   CardContent,
   Container,
+  IconButton,
+  styled,
   Typography,
 } from "@mui/material";
 import { blueGrey } from "@mui/material/colors";
+import CodeIcon from "@mui/icons-material/Code";
+import { pink } from "@mui/material/colors";
+
+const ColorButton = styled(IconButton)<ButtonProps>(({ theme }) => ({
+  color: theme.palette.getContrastText(pink[400]),
+  backgroundColor: pink[400],
+  "&:hover": {
+    backgroundColor: pink[400],
+  },
+}));
 
 const services = [
   {
@@ -19,7 +32,7 @@ const services = [
     id: 2,
     title: "Responsive Design",
     description:
-      " Ensuring sites look and function perfectly on desktops, tablets, and mobile phones.",
+      "Ensuring sites look and function perfectly on desktops, tablets, and mobile phones.",
   },
   {
     id: 3,
@@ -73,29 +86,34 @@ const Services = () => {
         >
           {services.map((service) => (
             <Card key={service.id} sx={{ maxWidth: 275, m: 3, minWidth: 200 }}>
-              <CardActionArea>
-                <CardContent>
-                  <Box sx={{ width: 28, height: 28, mb: 2 }}>
-                    <img src="/assets/Htmx-Dark.svg" alt="icon" />
-                  </Box>
-                  <Typography
-                    sx={{
-                      fontFamily: "outfit",
-                      mb: 2,
-                    }}
-                  >
-                    {service.title}
-                  </Typography>
-                  <Typography
-                    sx={{
-                      fontFamily: "outfit",
-                      color: blueGrey[500],
-                    }}
-                  >
-                    {service.description}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
+              <CardContent>
+                <ColorButton
+                  sx={{
+                    width: 32,
+                    height: 32,
+                    mb: 2,
+                    borderRadius: 1,
+                  }}
+                >
+                  <CodeIcon sx={{ color: "white" }} />
+                </ColorButton>
+                <Typography
+                  sx={{
+                    fontFamily: "outfit",
+                    mb: 2,
+                  }}
+                >
+                  {service.title}
+                </Typography>
+                <Typography
+                  sx={{
+                    fontFamily: "outfit",
+                    color: blueGrey[500],
+                  }}
+                >
+                  {service.description}
+                </Typography>
+              </CardContent>
             </Card>
           ))}
         </Box>
