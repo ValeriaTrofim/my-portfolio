@@ -88,7 +88,6 @@ const About = () => {
             {toolIcons.map((tool) => (
               <IconButton
                 key={tool}
-                src={tool}
                 sx={{ width: 38, height: 38, p: 0, mr: 1 }}
               >
                 <img src={tool} alt="tool" />
