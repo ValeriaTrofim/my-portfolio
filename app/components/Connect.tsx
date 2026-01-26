@@ -15,6 +15,7 @@ const Connect = () => {
         }}
       >
         <Typography
+          id="contact"
           sx={{
             fontFamily: "inherit",
             typography: { sm: "h5", xs: "h6" },

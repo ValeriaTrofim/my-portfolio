@@ -60,6 +60,7 @@ const Services = () => {
         }}
       >
         <Typography
+          id="services"
           sx={{
             fontFamily: "inherit",
             typography: { sm: "h5", xs: "h6" },

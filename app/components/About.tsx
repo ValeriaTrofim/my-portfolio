@@ -25,6 +25,7 @@ const About = () => {
         }}
       >
         <Typography
+          id="about"
           sx={{
             fontFamily: "inherit",
             typography: { sm: "h5", xs: "h6" },

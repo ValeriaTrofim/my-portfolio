@@ -21,6 +21,7 @@ const Header = () => {
         }}
       >
         <Avatar
+          id="top"
           alt="Valeria Trofim"
           src="/assets/avatar.jpg"
           sx={{ width: 98, height: 98 }}

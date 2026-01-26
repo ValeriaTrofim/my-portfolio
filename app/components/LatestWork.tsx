@@ -36,6 +36,7 @@ const LatestWork = () => {
         }}
       >
         <Typography
+          id="#work"
           sx={{
             fontFamily: "inherit",
             typography: { sm: "h5", xs: "h6" },

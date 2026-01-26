@@ -9,23 +9,23 @@ import {
 export const lists = [
   {
     page: "Home",
-    link: "top",
+    link: "#top",
   },
   {
     page: "About me",
-    link: "about",
+    link: "#about",
   },
   {
     page: "Services",
-    link: "services",
+    link: "#services",
   },
   {
     page: "My work",
-    link: "work",
+    link: "#work",
   },
   {
     page: "Contact me",
-    link: "contact",
+    link: "#contact",
   },
 ];
 
@@ -34,7 +34,7 @@ const DrawerList = () => {
     <List>
       {lists.map((list) => (
         <ListItem key={list.page} disablePadding>
-          <ListItemButton component={Link} href={`#${list.link}`}>
+          <ListItemButton component={Link} href={`${list.link}`}>
             <ListItemText primary={list.page} />
           </ListItemButton>
         </ListItem>

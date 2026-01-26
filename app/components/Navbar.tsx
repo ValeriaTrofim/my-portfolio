@@ -56,7 +56,7 @@ const Navbar = () => {
           >
             {lists.map((list) => (
               <Link
-                href={`# ${list.link}`}
+                href={`${list.link}`}
                 underline="hover"
                 color="secondary"
                 key={list.page}
