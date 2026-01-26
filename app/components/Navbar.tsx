@@ -9,7 +9,6 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-import { blueGrey } from "@mui/material/colors";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import ArrowOutwardOutlinedIcon from "@mui/icons-material/ArrowOutwardOutlined";
@@ -19,14 +18,14 @@ import { useColorScheme } from "@mui/material/styles";
 import { useCallback } from "react";
 
 const Navbar = () => {
-  const { mode, systemMode, setMode } = useColorScheme();
+  const { mode, setMode } = useColorScheme();
 
   const toggleDarkTheme = useCallback(() => {
     if (mode) {
       const currMode = mode === "dark" ? "light" : "dark";
       setMode(currMode);
     }
-  }, [mode, systemMode]);
+  }, [mode]);
   return (
     <AppBar position="static" sx={{ bgcolor: "background.paper" }}>
       <Container maxWidth="xl">

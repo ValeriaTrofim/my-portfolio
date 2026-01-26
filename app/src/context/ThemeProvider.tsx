@@ -6,7 +6,6 @@ import {
   ThemeProvider,
 } from "@mui/material";
 import { createContext, useContext, useMemo } from "react";
-import type {} from "@mui/material/themeCssVarsAugmentation";
 import { blueGrey } from "@mui/material/colors";
 
 const AppThemeContext = createContext(null);
@@ -15,6 +14,10 @@ const AppThemeProvider = (props: any) => {
   const theme = useMemo(() => {
     return responsiveFontSizes(
       createTheme({
+        cssVariables: {
+          colorSchemeSelector: "class",
+        },
+
         typography: {
           fontFamily: "Ovo",
         },

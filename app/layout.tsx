@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Outfit, Ovo } from "next/font/google";
-import { ThemeProvider } from "@mui/material/styles";
 import "./globals.css";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import AppThemeProvider from "./src/context/ThemeProvider";
