@@ -8,7 +8,6 @@ import {
 } from "@mui/material";
 import { cards } from "./AboutCard";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { blueGrey } from "@mui/material/colors";
 
 const AboutAccordion = () => {
   return (
@@ -20,7 +19,9 @@ const AboutAccordion = () => {
             aria-controls="panel1-content"
             id="panel1-header"
           >
-            <Box sx={{ color: blueGrey[900], mr: 1 }}>{card.Icon}</Box>
+            <Box color="secondary" sx={{ mr: 1 }}>
+              {card.Icon}
+            </Box>
             <Typography
               sx={{
                 fontFamily: "outfit",
@@ -31,9 +32,9 @@ const AboutAccordion = () => {
           </AccordionSummary>
           <AccordionDetails>
             <Typography
+              color="primary"
               sx={{
                 fontFamily: "outfit",
-                color: blueGrey[500],
               }}
             >
               {card.description}

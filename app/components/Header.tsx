@@ -6,7 +6,6 @@ import {
   Link,
   Typography,
 } from "@mui/material";
-import { blueGrey } from "@mui/material/colors";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
@@ -55,11 +54,11 @@ const Header = () => {
             variant="outlined"
             component={Link}
             href="#contact"
+            color="secondary"
             sx={{
               m: 2,
               fontFamily: "inherit",
-              color: blueGrey[900],
-              borderColor: blueGrey[500],
+              borderColor: "primary",
             }}
             endIcon={<ArrowForwardIcon />}
           >
@@ -72,8 +71,9 @@ const Header = () => {
             download
             sx={{
               fontFamily: "inherit",
-              borderColor: blueGrey[500],
-              bgcolor: blueGrey[500],
+              color: "#fff",
+              borderColor: "primary",
+              bgcolor: "primary",
             }}
             endIcon={<ArrowDownwardIcon />}
           >

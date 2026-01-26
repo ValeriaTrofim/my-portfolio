@@ -1,5 +1,4 @@
 import { BottomNavigation, Box, Link } from "@mui/material";
-import { blueGrey } from "@mui/material/colors";
 
 const lists = [
   {
@@ -14,30 +13,28 @@ const lists = [
 
 const Footer = () => {
   return (
-    <BottomNavigation>
+    <BottomNavigation
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+      }}
+    >
       {lists.map((list) => (
-        <Box
+        <Link
           key={list.page}
+          href={list.link}
+          underline="hover"
+          target="_blank"
+          color="secondary"
           sx={{
-            display: "flex",
-            justifyContent: "flex-end",
+            my: 2,
+            mx: 2.7,
+            display: "block",
+            fontFamily: "outfit",
           }}
         >
-          <Link
-            href={list.link}
-            underline="hover"
-            target="_blank"
-            sx={{
-              my: 2,
-              mx: 2.7,
-              color: blueGrey[900],
-              display: "block",
-              fontFamily: "outfit",
-            }}
-          >
-            {list.page}
-          </Link>
-        </Box>
+          {list.page}
+        </Link>
       ))}
     </BottomNavigation>
   );

@@ -9,7 +9,6 @@ import {
   styled,
   Typography,
 } from "@mui/material";
-import { blueGrey } from "@mui/material/colors";
 import CodeIcon from "@mui/icons-material/Code";
 import { pink } from "@mui/material/colors";
 
@@ -106,9 +105,9 @@ const Services = () => {
                   {service.title}
                 </Typography>
                 <Typography
+                  color="primary"
                   sx={{
                     fontFamily: "outfit",
-                    color: blueGrey[500],
                   }}
                 >
                   {service.description}

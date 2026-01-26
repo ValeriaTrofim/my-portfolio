@@ -2,7 +2,6 @@
 import { Box, Drawer, IconButton } from "@mui/material";
 import { useState } from "react";
 import DrawerList from "./DrawerList";
-import { blueGrey } from "@mui/material/colors";
 import MenuIcon from "@mui/icons-material/Menu";
 
 const MobileMenu = () => {
@@ -14,9 +13,9 @@ const MobileMenu = () => {
     <>
       <IconButton aria-label="menu" onClick={toggleDrawer(true)}>
         <MenuIcon
+          color="secondary"
           sx={{
             display: { xs: "flex", md: "none" },
-            color: blueGrey[900],
           }}
         />
       </IconButton>
