@@ -1,8 +1,37 @@
+"use client";
 import { Box, Button, Container, TextField, Typography } from "@mui/material";
 import EmailIcon from "@mui/icons-material/Email";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { useState } from "react";
 
 const Connect = () => {
+  const [result, setResult] = useState("Submit Now");
+
+  const onSubmit = async (event: any) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+
+    const apiKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY as string;
+
+    formData.append("access_key", apiKey);
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Submitted");
+      event.target.reset();
+    } else {
+      console.log(data.message, data);
+      setResult("Error");
+    }
+  };
+
   return (
     <Container maxWidth="xl">
       <Box
@@ -43,76 +72,78 @@ const Connect = () => {
           or feedback through the form below.
         </Typography>
         <Box>
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              flexWrap: "wrap",
-            }}
-          >
+          <form onSubmit={onSubmit}>
             <Box
-              component="form"
-              sx={{ "& > :not(style)": { m: 1, width: "25ch" } }}
-              noValidate
-              autoComplete="off"
-            >
-              <TextField
-                id="name"
-                label="Enter your name"
-                variant="outlined"
-                color="primary"
-              />
-            </Box>
-            <Box
-              component="form"
-              sx={{ "& > :not(style)": { m: 1, width: "25ch" } }}
-              noValidate
-              autoComplete="off"
-            >
-              <TextField
-                id="email"
-                label="Enter your email"
-                variant="outlined"
-              />
-            </Box>
-          </Box>
-          <Box sx={{ m: 1, display: "flex", justifyContent: "center" }}>
-            <TextField
-              sx={{ width: { sm: 515, xs: 250 } }}
-              component="form"
-              multiline
-              label="Enter your message"
-              id="message"
-            />
-          </Box>
-          <Box sx={{ display: "flex", justifyContent: "center" }}>
-            <Button
-              variant="contained"
-              sx={{
-                m: 1,
-                mb: 8,
-                fontFamily: "inherit",
-                borderColor: "primary",
-                bgcolor: "primary",
-              }}
-              endIcon={<ArrowForwardIcon />}
-            >
-              Submit now
-            </Button>
-          </Box>
-          <Box>
-            <Typography
-              noWrap
               sx={{
                 display: "flex",
                 justifyContent: "center",
-                color: "secondary",
+                flexWrap: "wrap",
               }}
             >
-              <EmailIcon color="secondary" sx={{ mr: 1 }} />
-              valeria.trofim@gmail.com
-            </Typography>
-          </Box>
+              <Box sx={{ "& > :not(style)": { m: 1, width: "25ch" } }}>
+                <TextField
+                  required
+                  autoComplete="off"
+                  id="name"
+                  name="name"
+                  label="Enter your name"
+                  variant="outlined"
+                  color="primary"
+                />
+              </Box>
+              <Box sx={{ "& > :not(style)": { m: 1, width: "25ch" } }}>
+                <TextField
+                  required
+                  autoComplete="off"
+                  id="email"
+                  name="email"
+                  label="Enter your email"
+                  variant="outlined"
+                />
+              </Box>
+            </Box>
+            <Box sx={{ m: 1, display: "flex", justifyContent: "center" }}>
+              <TextField
+                sx={{ width: { sm: 515, xs: 250 } }}
+                rows={4}
+                multiline
+                autoComplete="off"
+                required
+                label="Enter your message"
+                name="message"
+                id="message"
+              />
+            </Box>
+            <Box sx={{ display: "flex", justifyContent: "center" }}>
+              <Button
+                variant="contained"
+                type="submit"
+                sx={{
+                  m: 1,
+                  mb: 3,
+                  fontFamily: "inherit",
+                  borderColor: "primary",
+                  bgcolor: "primary",
+                }}
+                endIcon={<ArrowForwardIcon />}
+              >
+                {result}
+              </Button>
+            </Box>
+          </form>
+        </Box>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            color: "secondary",
+          }}
+        >
+          <Typography noWrap>
+            <EmailIcon color="secondary" sx={{ mr: 1 }} />
+            valeria.trofim@gmail.com
+          </Typography>
         </Box>
       </Box>
     </Container>

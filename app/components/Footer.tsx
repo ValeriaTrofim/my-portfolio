@@ -1,4 +1,4 @@
-import { BottomNavigation, Box, Link } from "@mui/material";
+import { BottomNavigation, Link } from "@mui/material";
 
 const lists = [
   {
