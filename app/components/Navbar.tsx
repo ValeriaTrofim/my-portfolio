@@ -33,8 +33,6 @@ const Navbar = () => {
           <Typography
             variant="h6"
             noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
             color="secondary"
             sx={{
               mr: 5,

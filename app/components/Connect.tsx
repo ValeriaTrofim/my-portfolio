@@ -132,15 +132,16 @@ const Connect = () => {
             </Box>
           </form>
         </Box>
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            color: "secondary",
-          }}
-        >
-          <Typography noWrap>
+        <Box>
+          <Typography
+            noWrap
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              color: "secondary",
+              alignItems: "center",
+            }}
+          >
             <EmailIcon color="secondary" sx={{ mr: 1 }} />
             valeria.trofim@gmail.com
           </Typography>

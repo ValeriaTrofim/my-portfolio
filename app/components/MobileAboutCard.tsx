@@ -41,7 +41,7 @@ const MobileAboutCard = () => {
                 key={index}
                 sx={{ width: 28, height: 28, p: 0, mr: 1 }}
               >
-                <img src={tool} alt="tool" />
+                <img src={tool.url} alt="tool" />
               </IconButton>
             ))}
           </Box>

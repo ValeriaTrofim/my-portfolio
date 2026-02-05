@@ -1,15 +1,40 @@
-import { Container, Typography, Box, Avatar, IconButton } from "@mui/material";
+import {
+  Container,
+  Typography,
+  Box,
+  Avatar,
+  IconButton,
+  Tooltip,
+} from "@mui/material";
 import AboutCard from "./AboutCard";
 import MobileAboutCard from "./MobileAboutCard";
 import AboutAccordion from "./AboutAccordion";
 
 export const toolIcons = [
-  "/assets/Git.svg",
-  "/assets/Github-Dark.svg",
-  "/assets/MaterialUI-Dark.svg",
-  "/assets/MongoDB.svg",
-  "/assets/Vercel-Dark.svg",
-  "/assets/VSCode-Dark.svg",
+  {
+    title: "Git",
+    url: "/assets/Git.svg",
+  },
+  {
+    title: "Github",
+    url: "/assets/Github-Dark.svg",
+  },
+  {
+    title: "MaterialUI",
+    url: "/assets/MaterialUI-Dark.svg",
+  },
+  {
+    title: "MongoDB",
+    url: "/assets/MongoDB.svg",
+  },
+  {
+    title: "Vercel",
+    url: "/assets/Vercel-Dark.svg",
+  },
+  {
+    title: "VSCode",
+    url: "/assets/VSCode-Dark.svg",
+  },
 ];
 
 const About = () => {
@@ -86,13 +111,12 @@ const About = () => {
           <AboutAccordion />
           <Typography>Tools I use :</Typography>
           <Box>
-            {toolIcons.map((tool) => (
-              <IconButton
-                key={tool}
-                sx={{ width: 38, height: 38, p: 0.3, mr: 1 }}
-              >
-                <img src={tool} alt="tool" />
-              </IconButton>
+            {toolIcons.map((tool, index) => (
+              <Tooltip key={index} title={tool.title}>
+                <IconButton sx={{ width: 38, height: 38, p: 0.3, mr: 1 }}>
+                  <img src={tool.url} alt="tool" />
+                </IconButton>
+              </Tooltip>
             ))}
           </Box>
         </Box>
