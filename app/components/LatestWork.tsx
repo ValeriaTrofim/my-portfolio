@@ -57,7 +57,7 @@ const LatestWork = () => {
           sx={{ textAlign: "center", typography: { sm: "h6", xs: "body1" } }}
         >
           Welcome to my web development portfolio! Check out the front-end
-          projects I’ve been building on my learning journey.
+          projects I have been building on my learning journey.
         </Typography>
       </Box>
       <Box
@@ -66,6 +66,7 @@ const LatestWork = () => {
           flexWrap: "wrap",
           minWidth: 300,
           justifyContent: "center",
+          p: 2,
         }}
       >
         {images.map((image) => (

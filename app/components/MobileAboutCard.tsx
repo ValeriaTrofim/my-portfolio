@@ -26,10 +26,12 @@ const MobileAboutCard = () => {
         />
         <CardContent>
           <Typography variant="body1" sx={{ fontFamily: "inherit", mb: 2 }}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum fugit
-            dolorum commodi praesentium libero blanditiis! Quisquam ad inventore
-            suscipit ratione doloremque, velit at ea incidunt? Labore fugit
-            deserunt animi magni.
+            I am a front-end developer building clean, responsive web
+            applications with React, Next.js, and TypeScript. I work with APIs
+            and MongoDB to create real, data-driven features, and I use React
+            Testing Library for testing and Sentry for monitoring, alongside
+            Git/GitHub and Vercel as part of modern development and deployment
+            workflows.
           </Typography>
           <AboutAccordion />
           <Typography variant="body1" sx={{ fontFamily: "inherit" }}>
