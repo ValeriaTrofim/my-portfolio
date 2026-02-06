@@ -11,7 +11,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const AboutAccordion = () => {
   return (
-    <Box sx={{ display: { xs: "flex", md: "none" }, flexDirection: "column" }}>
+    <Box sx={{ display: { xs: "flex", lg: "none" }, flexDirection: "column" }}>
       {cards.map((card) => (
         <Accordion key={card.id} sx={{ mb: 2 }}>
           <AccordionSummary

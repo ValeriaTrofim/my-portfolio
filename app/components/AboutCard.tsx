@@ -33,9 +33,9 @@ export const cards = [
 
 const AboutCard = () => {
   return (
-    <Box sx={{ display: { md: "flex", sm: "none" }, flexWrap: "wrap" }}>
+    <Box sx={{ display: { xs: "none", lg: "flex" } }}>
       {cards.map((card) => (
-        <Card sx={{ maxWidth: 275, mr: 3, mb: 3, minWidth: 200 }} key={card.id}>
+        <Card sx={{ maxWidth: 275, mr: 3, mb: 3 }} key={card.id}>
           <CardActionArea>
             <CardContent>
               <Box>{card.Icon}</Box>
