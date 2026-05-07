@@ -68,7 +68,7 @@ const Header = () => {
           <Button
             variant="contained"
             component={Link}
-            href="/assets/valeria-trofim-resume.pdf"
+            href="/assets/Valeria-Trofim-Resume.pdf"
             download
             sx={{
               fontFamily: "inherit",
