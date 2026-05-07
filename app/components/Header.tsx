@@ -46,7 +46,7 @@ const Header = () => {
           frontend web developer based in Malmo.
         </Typography>
         <Typography variant="h5" sx={{ textAlign: "center" }}>
-          I am a beginner frontend developer from Moldova who aims to build web
+          I am a frontend developer from Moldova who aims to build web
           applications that are seamless, visually compelling, and can resonate
           with users.
         </Typography>

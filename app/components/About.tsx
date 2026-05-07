@@ -102,12 +102,12 @@ const About = () => {
               pb: { sm: 2, md: 6 },
             }}
           >
-            I am a front-end developer building clean, responsive web
-            applications with React, Next.js, and TypeScript. I work with APIs
-            and MongoDB to create real, data-driven features, and I use React
-            Testing Library for testing and Sentry for monitoring, alongside
-            Git/GitHub and Vercel as part of modern development and deployment
-            workflows.
+            I specialize in building clean, responsive web applications with
+            React, Next.js, and TypeScript. My approach integrates real-time
+            features through APIs and MongoDB, while ensuring application
+            stability with React Testing Library and Sentry monitoring. From
+            initial architecture to deployment on Vercel, I focus on building
+            scalable, data-driven solutions that resonate with users.
           </Typography>
           <AboutCard />
           <AboutAccordion />
